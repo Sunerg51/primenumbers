@@ -1,13 +1,19 @@
+from math import sqrt
 
 def isPrime(x):
-	for i in range(2, x):
+	#You only need to check up until the sqrt of a number to tell if it is prime or not
+	int lastDivisor = int(sqrt(x))
+	
+	for i in range(2, lastDivisor + 1):
 		if (x % i) == 0:
 			return False
 	else:
 		return True
 num = int(input())
 
-for i in range(2,num):
+# Changed the loop to also check for the number entered
+# Python loops check the range [2, num + 1)
+for i in range(2,num + 1):
 	if(isPrime(i)):
 		print(i)
 
